@@ -16,8 +16,86 @@ body{
     font-family: lato;
 }
 
+
+/* ---------Intended to toggle full page scroll-------------- */
+
+/* .main{
+    height: 100vh;
+    overflow: scroll;
+}
+
+.main.show{
+    overflow: scroll;
+} */
+
+
+button{
+    cursor: pointer;
+    outline: 0;
+}
+
+button:focus{
+    outline: 0;
+}
+
+#buttons-div{
+    position: relative;
+}
+
+#prev-button{
+    position: fixed;
+    right: 2rem;
+    bottom: 8rem;
+    padding: .5rem;
+    background-image: linear-gradient(45deg, #555, #eb336b);
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+#next-button{
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    padding: .5rem 1.1rem;
+    background-image: linear-gradient(45deg, #555, #eb336b);
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+#smooth-button{
+    position: fixed;
+    right: 2rem;
+    bottom: 5rem;
+    padding: .5rem 1.1rem;
+    background-image: linear-gradient(45deg, #555, #eb336b);
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+#section-button{
+    display: none;
+    position: fixed;
+    right: 2rem;
+    bottom: 5rem;
+    padding: .5rem 1.1rem;
+    background-image: linear-gradient(45deg, #555, #eb336b);
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+section{
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all .5s .5s;
+}
+
+section.show{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
 .section-a{
-    height: 50vh;
+    height: 100vh;
     width: 100%;
     font-family: lato;
     color: #fff;
@@ -39,6 +117,10 @@ header{
 }
 
 nav{
+    /* position: fixed;
+    top: 0rem;
+    right: 0rem;
+    left: 0rem; */
     display: flex;
     height: 5rem;
     transition: .7s;
@@ -46,12 +128,55 @@ nav{
     align-items: center;
 }
 
-nav ul{
+#hambugger{
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    display: none;
+}
+
+#hambugger:hover{
+    transform: rotate(90deg);
+}
+
+#hambugger-1{
+    width: 100%;
+    height: 20%;
+    background-color: #eb336b;
+}
+
+#hambugger-1.cross{
+    transform: rotate(45deg);
+    margin-top: .5rem;
+}
+
+#hambugger-2{
+    width: 100%;
+    height: 20%;
+    background-color: #eb336b;
+}
+
+#hambugger-3{
+    width: 100%;
+    height: 20%;
+    background-color: #eb336b;
+}
+
+#hambugger-3.crosser{
+    transform: rotate(-45deg);
+    margin-bottom: .5rem;
+}
+
+ul{
     display: flex;
 }
 
 li{
     list-style-type: none;
+}
+
+nav ul li a{
+    text-decoration: none;
 }
 
 nav:hover{
@@ -66,7 +191,7 @@ nav:hover{
     color: #eb336b;
 }
 
-.menu{
+.menu-1{
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
@@ -77,7 +202,22 @@ nav:hover{
     transition: .7s;
 }
 
-.menu:hover{
+.menu-2{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    float: right;
+    padding: 1.9rem;
+    margin: 0 4rem 0 0;
+    transition: .7s;
+}
+
+.menu-1:hover{
+    color: #eb336b;
+}
+
+.menu-2:hover{
     color: #eb336b;
 }
 
@@ -151,7 +291,7 @@ nav:hover{
 /*------------------------------------TECHNOLOGIES-------------------------*/
 
 .technologies{
-    margin-top: 20rem;
+    margin-top: 7rem;
     text-align: center;
 }
 
@@ -167,6 +307,7 @@ nav:hover{
     color: #555;
     width: 90%;
     padding-top: 8rem;
+    height: 70vh;
     text-align: left;
 }
 
@@ -182,6 +323,7 @@ nav:hover{
     width: 20rem;
     height: auto;
     margin-right: 5%;
+    transform: translate(100);
 }
 
 #html-p-h{
@@ -195,6 +337,7 @@ nav:hover{
     color: #555;
     width: 90%;
     padding-top: 15rem;
+    height: 70vh;
     text-align: left;
 }
 
@@ -212,6 +355,8 @@ nav:hover{
     margin-right: 5%;
 }
 
+
+
 #css-p-h{
     color: #eb336b;
     padding: 2rem 0rem;
@@ -222,6 +367,7 @@ nav:hover{
 .javascript{
     color: #555;
     width: 90%;
+    height: 70vh;
     padding-top: 15rem;
     text-align: left;
 }
@@ -251,6 +397,7 @@ nav:hover{
     color: #555;
     width: 90%;
     padding-top: 15rem;
+    height: 70vh;
     text-align: left;
 }
 
@@ -264,8 +411,17 @@ nav:hover{
 
 #react-img{
     width: 20rem;
-    height: auto;
-    margin-right: 5%;
+    height: 20rem;
+    animation: reactanimate 5s linear infinite;
+}
+
+@keyframes reactanimate{
+    0%{
+        transform: rotate(0deg);
+    }
+    0%{
+        transform: rotate(360deg);
+    }
 }
 
 #react-p-h{
@@ -279,6 +435,7 @@ nav:hover{
     color: #555;
     width: 90%;
     padding-top: 15rem;
+    height: 70vh;
     padding-bottom: 8rem;
     text-align: left;
 }
@@ -304,13 +461,23 @@ nav:hover{
 
 
 
+
+
+.write-up{
+    text-align: center;
+    height: 50vh;
+    padding-top: 8rem;
+}
+
+
+
 /*----------Footer------*/
 
 
 .footer{
   margin-top: 6rem;
   width: 100%;
-  height: 25rem;
+  height: 18rem;
   background-color: #08101b;
   font-family: lato;
 }
@@ -479,6 +646,8 @@ a{
 
 
 
+
+
 @media (max-width: 900px){
     .header-sub-div{
         position: relative;
@@ -567,7 +736,7 @@ a{
     /*------------------------------------TECHNOLOGIES-------------------------*/
 
 .technologies{
-    margin-top: 20rem;
+    margin-top: 7rem;
     text-align: center;
 }
 
@@ -583,6 +752,7 @@ a{
 .html{
     color: #555;
     width: 90%;
+    height: 70vh;
     padding-top: 8rem;
     text-align: left;
 }
@@ -611,6 +781,7 @@ a{
 .css{
     color: #555;
     width: 90%;
+    height: 70vh;
     padding-top: 15rem;
     text-align: left;
 }
@@ -639,6 +810,7 @@ a{
 .javascript{
     color: #555;
     width: 90%;
+    height: 70vh;
     padding-top: 15rem;
     text-align: left;
 }
@@ -667,6 +839,7 @@ a{
 .react{
     color: #555;
     width: 90%;
+    height: 70vh;
     padding-top: 15rem;
     text-align: left;
 }
@@ -696,6 +869,7 @@ a{
     color: #555;
     width: 90%;
     padding-top: 15rem;
+    height: 70vh;
     padding-bottom: 8rem;
     text-align: left;
 }
@@ -723,7 +897,7 @@ a{
 /*---------Footer---------------*/
 
 .footer{
-    height: 18rem;
+    height: 100vh;
 }
   
   .footer-container{
@@ -825,32 +999,7 @@ a{
 
     /*--------------Go Top--------------*/
 
-    .top-div{
-        position: fixed;
-        bottom: 1rem;
-        right: 1rem;
-        display: inline-block;
-        background-color: #555;
-        width: 20%;
-        height: 2.2rem;
-        font-size: 1.2rem;
-        border-radius: 4%;
-        padding: .5rem 1rem 1rem 1rem;
-        text-align: center;
-        border: none;
-        color: white;
-        text-align: center;
-        opacity: 0;
-    }
-    
-    .top-div:hover{
-        cursor: pointer;
-        padding-right: 1rem;
-    }
-    
-    .top-div:focus{
-        outline: none;
-    }
+
 
     
 }
@@ -897,7 +1046,7 @@ a{
 
     header{
         width: 100vw;
-        height: 80vh;
+        height: 85vh;
     }
 
     .header-sub-div{
@@ -917,6 +1066,19 @@ a{
         height: auto;
     }
 
+    #hambugger{
+        position: absolute;
+        top: 1.7rem;
+        right: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        transition: all 0.5s ease;
+        /* margin: 1rem 3rem 0rem 0rem; */
+        z-index: 100;
+    }
+
     #title-text{
         position: unset;
         font-size: 3rem;
@@ -930,16 +1092,20 @@ a{
        
     }
 
-    #header-button{
-        display: block;
-        border: 2px dotted pink;
-        background-color: #fff;
-        color: #3b4a42;
-        border-radius: 50px;
-        margin-top: 1rem;
-        margin-left: 7.9rem;
-        padding: .3rem 1rem;
-        font-size: .7rem;
+    .header-p{
+        position: absolute;
+        top: 0%;
+        left: 0%;
+    }
+
+    .header-p-1{
+        padding: 42rem 1rem 0rem 1rem;
+        color: #eb336b;
+    }
+    
+    .header-p-2{
+        padding: 42rem 1rem 0rem 1rem;
+        color: #eb336b;
     }
     
     
@@ -959,8 +1125,50 @@ a{
     margin-left: 2rem;
   }
 
-  .menu{
-    margin: 2rem;
+  .menu-1{
+    margin: 1rem;
+    color: #eb336b;
+    margin-top: 5rem;
+    padding: 1rem;
+  }
+
+  .menu-1:hover{
+      text-decoration: underline;
+  }
+
+  .menu-2:hover{
+    text-decoration: underline;
+}
+
+  .menu-2{
+    margin: 1rem;
+    padding: 1rem;
+    color: #eb336b;
+  }
+
+  #nav-ul{
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      opacity: 1;
+      width: 50vw;
+      height: 100vh;
+      z-index: 1;
+      display: none;
+      animation: navAnimation .3s linear;
+  }
+
+  @keyframes navAnimation{
+      0%{transform: translate(200px)}
+      100%{transform: translate(0px)}
+  }
+
+
+  #nav-ul.show{
+      display: flex;
   }
 
   #header-button{
@@ -972,7 +1180,7 @@ a{
 /*------------------------------------TECHNOLOGIES-------------------------*/
 
 .technologies{
-    margin-top: 20rem;
+    margin-top: 7rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -991,8 +1199,9 @@ a{
 
 .html{
     color: #555;
-    width: 90%;
-    padding-top: 5rem;
+    width: 100%;
+    height: 70vh;
+    /* padding-top: 5rem; */
     text-align: left;
 }
 
@@ -1020,8 +1229,9 @@ a{
 
 .css{
     color: #555;
-    width: 90%;
-    padding-top: 10rem;
+    width: 100%;
+    height: 70vh;
+    /* padding-top: 10rem; */
     text-align: left;
 }
 
@@ -1050,8 +1260,9 @@ a{
 
 .javascript{
     color: #555;
-    width: 90%;
-    padding-top: 10rem;
+    width: 100%;
+    height: 70vh;
+    /* padding-top: 10rem; */
     text-align: left;
 }
 
@@ -1080,8 +1291,8 @@ a{
 
 .react{
     color: #555;
-    width: 90%;
-    padding-top: 10rem;
+    width: 100%;
+    height: 70vh;
     text-align: left;
 }
 
@@ -1096,8 +1307,8 @@ a{
 
 #react-img{
     width: 20rem;
-    height: auto;
-    padding: 2rem 0rem 0rem 3rem;
+    height: 20rem;
+    padding: 0rem 0rem 0rem 0rem;
 }
 
 #react-p-h{
@@ -1109,8 +1320,8 @@ a{
 
 .vue{
     color: #555;
-    width: 90%;
-    padding-top: 10rem;
+    width: 100%;
+    height: 70vh;
     padding-bottom: 8rem;
     text-align: left;
 }
@@ -1127,7 +1338,7 @@ a{
 #vue-img{
     width: 20rem;
     height: auto;
-    padding: 2rem 0rem 0rem 3rem;
+    padding: 2rem 0rem 8rem 3rem;
 }
 
 #vue-p-h{
@@ -1239,6 +1450,37 @@ a{
       justify-content: center;
       padding: 2rem 0rem 3rem 0rem; 
   }
+
+   /*-------------Go Top--------------*/
+
+.top-div{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: inline-block;
+    background-color: #555;
+    width: 20%;
+    height: 2.2rem;
+    font-size: 1.2rem;
+    border-radius: 4%;
+    padding: .5rem 1rem 1rem 1rem;
+    text-align: center;
+    border: none;
+    color: white;
+    text-align: center;
+    opacity: 0;
+}
+
+.top-div:hover{
+    cursor: pointer;
+    padding-right: 1rem;
+}
+
+.top-div:focus{
+    outline: none;
+}
+
+
 
 
 }

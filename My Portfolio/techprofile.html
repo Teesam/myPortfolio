@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Portfolio</title>
+    <title>Tunde's Portfolio</title>
     <link rel="stylesheet" type= 'text/css' href="techprofile.css">
 </head>
 <body>
 
 
+    <main class="main">
+
     <section class= 'section-a'>
         <header>
             <nav>
                 <h2 class ='logo'>Tunde</h2>
-                <ul>
-                    <li>
-                        <a class='menu' href="index.html">Home</a>
-                    </li>
-
-                    <li>
-                        <a class='menu' href="#">Resume</a>
-                    </li>
-                </ul>
+                <div id="nav-item-holder">
+                    <a href="#" id="hambugger">
+                        <div id="hambugger-1"></div>
+                        <div id="hambugger-2"></div>
+                        <div id="hambugger-3"></div>
+                    </a>
+                    <ul id="nav-ul">
+                        <li>
+                            <a class='menu-1' href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class='menu-2' href='#'>Resume</a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
 
             <div class= 'header-sub-div'>
@@ -61,7 +69,9 @@
             <img src="htmldog.png" alt="" id="html-img">
         </div>
     </div>
+</section>
 
+<section>
     <div class="css">
         <div class="css-main">
             <div id="css-p">
@@ -76,7 +86,9 @@
             <img src="css.jpg" alt="" id="css-img">
         </div>
     </div>
+</section>
 
+<section>
     <div class="javascript">
         <div class="javascript-main">
             <div id="javascript-p">
@@ -89,7 +101,9 @@
             <img src="javascript.png" alt="" id="javascript-img">
         </div>
     </div>
+</section>
 
+<section>
     <div class="react">
         <div class="react-main">
             <div id="react-p">
@@ -102,7 +116,9 @@
             <img src="react.png" alt="" id="react-img">
         </div>
     </div>
+</section>
 
+<section>
     <div class="vue">
         <div class="html-main">
             <div id="vue-p">
@@ -113,13 +129,29 @@
             
                 </p>
             </div>
-            <img src="vue.png" alt="" id="vue-img">
+
+
+
+           
+                <img src="vue.png" alt="" id="vue-img">
+
+                
+<!-- Intended for toggling full page scrolling -->
+                <!-- <div id="buttons-div">
+                    <button id="prev-button">Previous</button>
+                    <button id="smooth-button">Smooth Scroll</button>
+                    <button id="section-button">Section Scroll</button>
+                    <button id="next-button">Next</button>
+                </div> -->
+           
         </div>
     </div>
-
-    <p><strong>Make no mistake, I'm proficient with any of these. Let's get down.</strong></p>
-
 </section>
+
+<section class="write-up">
+    <p><strong>Make no mistake, I'm proficient with any of these. Let's get down.</strong></p>
+</section>
+
 
     <footer class="footer">
         <div class = 'footer-container'>
@@ -163,6 +195,7 @@
                             Top
                     </button>
                 </div>
+                
 
             </div>
 
@@ -170,6 +203,9 @@
     </footer>
 
 
-    <!-- <script src = 'script.js'></script> -->
+    </main>
+
+    <script src = 'script.js'></script>
+
 </body>
 </html>
