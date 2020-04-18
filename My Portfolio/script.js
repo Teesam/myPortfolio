@@ -8,9 +8,10 @@ const hambuggerTwo = document.getElementById('hambugger-2');
 const hambuggerThree = document.getElementById('hambugger-3');
 const navUl = document.getElementById('nav-ul');
 const main = document.querySelector('.main');
+const docBody = document.getElementsByTagName('body');
 
 
-
+console.log(docBody);
 
 // navigationBtn.addEventListener('click', ()=>{
 //     footer.style.display = 'block';
@@ -95,8 +96,9 @@ hambugger.addEventListener('click', () =>{
     hambuggerOne.classList.toggle('cross');
     hambuggerThree.classList.toggle('crosser');
     (hambuggerTwo.style.display === 'none') ? hambuggerTwo.style.display = 'block': hambuggerTwo.style.display = 'none';
+    docBody.classList.toggle('ham');
 })
 
-windows.onLoad(() => {
+window.onLoad(() => {
     
 })
